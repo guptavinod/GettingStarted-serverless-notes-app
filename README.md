@@ -112,12 +112,10 @@ There are 7 Components:
 	
 	- You would be able to see UI(s)
 	
-	![](NotesApp-SignIn.png)
-	
-	![Amazon-Cognito-(Federated Identities)-Authentication Flow](awscognito-authentication-flow.png)
-
-	![](NotesApp-add.png)
-	![](NotesApp-listing.png)
+	![Notes App - SignIn page](images/NotesApp-SignIn.png)	
+	![Amazon-Cognito-(Federated Identities)-Authentication Flow](images/awscognito-authentication-flow.png)
+	![Notes App - Add page](images/NotesApp-add.png)
+	![Notes App - Listing page](images/NotesApp-listing.png)
 	
 10. **Clean UP Resources** - Go the VS Studio for project "serverless-notes-backend" and run following commands:
 	```	
