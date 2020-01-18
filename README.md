@@ -112,7 +112,7 @@ There are 7 Components:
 	
 	![](NotesApp-SignIn.png)
 	
-	![Amazon-Cognito-(Federated Identities)-Authentication Flow](Amazon-Cognito-(Federated Identities)-Authentication Flow.png)
+	![Amazon-Cognito-(Federated Identities)-Authentication Flow](awscognito-authentication-flow.png)
 
 	![](NotesApp-add.png)
 	![](NotesApp-listing.png)
