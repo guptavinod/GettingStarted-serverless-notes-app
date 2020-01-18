@@ -12,7 +12,9 @@ There are 7 Components:
 7. Serverless Frontend app
 
 # SETUP
-1. Git Pull for two Repositories : serverless-notes-backend and serverless-notes-webapp
+1. Do Git Pull for following 2 Repositories : 
+	- serverless-notes-backend (URL: https://github.com/guptavinod/serverless-notes-backend) 
+	- serverless-notes-webapp (URL:  https://github.com/guptavinod/serverless-notes-webapp)
 
 2. Open both the projects folders in VS Code Editor
 
