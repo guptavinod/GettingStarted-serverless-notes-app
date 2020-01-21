@@ -118,7 +118,37 @@ There are 7 Components:
 	- You would be able to see UI(s)
 	
 	![Notes App - SignIn page](images/NotesApp-SignIn.png)	
+
+10. User Authentication Workflow:
+
+From Notes Frontend app --> within **login.component.html** --> onSignin() --> login.component.ts --> this.authService.login() --> this.setCredentials(id_token); --> This makes a call to Notes Backend app **auth Function** 
+e.g. API_ROOT + STAGE + '/auth'
+
 	![Amazon-Cognito-(Federated Identities)-Authentication Flow](images/awscognito-authentication-flow.png)
+
+## Sample AWS Credentials Response from notes backend app (auth lambda function) 
+```
+	**id_token:**
+	eyJhbGciOiJSUzI1NiIsImtpZCI6ImJhZDM5NzU0ZGYzYjI0M2YwNDI4YmU5YzUzNjFkYmE1YjEwZmZjYzAiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJhY2NvdW50cy5nb29nbGUuY29tIiwiYXpwIjoiMjkyMjM0NjAyNzQ5LTVyY2ZnaWxwa2ZmdjI5MDk0ZW81N2JpdmVnbGFwMWpzLmFwcHMuZ29vZ2xldXNlcmNvbnRlbnQuY29tIiwiYXVkIjoiMjkyMjM0NjAyNzQ5LTVyY2ZnaWxwa2ZmdjI5MDk0ZW81N2JpdmVnbGFwMWpzLmFwcHMuZ29vZ2xldXNlcmNvbnRlbnQuY29tIiwic3ViIjoiMTEzOTc4MzU2Mzg1NTYwNzM4MDM2IiwiZW1haWwiOiJtb29uZXNoa0BnbWFpbC5jb20iLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwiYXRfaGFzaCI6IlV3SmRCM01fckhWdnlCR2VBOXhvREEiLCJuYW1lIjoiTW9vbmVzaCBLYWNocm9vIiwicGljdHVyZSI6Imh0dHBzOi8vbGgzLmdvb2dsZXVzZXJjb250ZW50LmNvbS9hLS9BQXVFN21EWWdYb2VrMHRtR09SOFpWSUVzYVZpcXM2QXR1dHRaUFhfRnFkMWNRPXM5Ni1jIiwiZ2l2ZW5fbmFtZSI6Ik1vb25lc2giLCJmYW1pbHlfbmFtZSI6IkthY2hyb28iLCJsb2NhbGUiOiJlbiIsImlhdCI6MTU3OTYwNDE5NCwiZXhwIjoxNTc5NjA3Nzk0LCJqdGkiOiJmYTEzYzY4ZTBjZjQ1OTE5MWJjZTgyMjhmNDAyNjE4OTM2MmYzMzcxIn0.cwUz_hUbJWFL6ULSma1uqHzXPmh4BeeyrUQhUofhAEwo31yFLDqDuU6Zz9uaL7vYf35o9kvsyLIiILXnltVdmts5Y7tCOrhk6XnHJybzSpDED0F2JEKoFPf2Lz8FM8bdi26aLgxXIzmuwp-DuM06CRtmnhe4mdblwHmViHrFUZYvCCxlVU0Z891-Z5jY_xocORk6tejQQ5pZXq2CY2toM3UUPDklwm1vaHUBtWheWMxR1_AswJdugS5i0YMNqdwBfj0afltBr4BEaPqz-GGbn4htXQI1AkRlLTKYfqP7saRSTC9CT0nA-TuMPqYOSENEzr9dUDfrL4l8HVf_4otJEg
+
+
+	**AWS CREDENTIALS:**
+	```
+	IdentityId: "us-east-1:20sasac60178-fe95-321`-a490-133c2c0909a2b"
+
+	Credentials: {AccessKeyId: "ASIATDK2FWGZO22CBE2M", SecretKey: "CebTnjFUDAmgjOgvmdqIDULVLsn6pBFHLDXbDszw",…}
+
+	AccessKeyId: "ASIATDK2FWGZO22CBE2M"
+
+	SecretKey: "CebTnjFUDAmgjOgvmdqIDULVLsn6pBFHLDXbDszw"
+
+	SessionToken: "IQoJb3JpZ2luX2VjEHsaCXVzLWVhc3QtMSJHMEUCIFNGpcIhc6Q/fCujd+peMODCKFjas1XaZSpaAcZSXYjUAiEA+NIHIgcjRjZRrlgsPxZ4OSXaHEMhA6dffb0cxTODPmUq4gMIFBAAGgwyMTMzMjY4Njg5MTQiDHicIUNhrpZry+uNcyq/A+ak7ti95yQ+atgYJNE6SfOiln7luoJovv52mgwTfahLnMLCii7KkqQpIbCyoFR6rSsnAiLJ9OiM0yoWHG8cZcK1vXhFlq7JSAZe66gR/96pcBoBSxlaU+7ClayNVQpP2614xTSrmr64ZybhfC70J0PQ0/C6xAltawI7pSKgGCmXfsEEChV5DFE8hSHp6AT/LF5T6dmzAo8S/MBmFNOiMTzvrLit/L5tpLE9hIgWviP4zzWdMlOqDp7S67zc7yCnJsUC+m3rW92iklYn8D5ptyaXtLqIp//fWNvndv0SbQcY3wdOPPy2WsC2JhMdiNxqWj42l8NgS3QV80CbEw1PEgzDRZUZhQmkII4PawvVkbglUlXb70lPbJuJPaT7VY2cPm66rbGuhWS+3zz3JILi3SntfrB5RkpEj6WNnFgRqQjQu107mfElY4TZVWnUUdbheegH2hd+06Xtv5JtN7/8mUcqZHLDaLVsdh5T6N8BmeVhHQsiHoGckSanvq64B686smVa7LTDiQ0RQbSHSTAngjHRIpzGCgcB+uR1aHT24/iW5tOLou+Qerc71+ZLWev/tQ2wEyvAEhCeihTdXJtUszCWsJvxBTrLAkmHpsI6TnaRxJOspVI/dWehb4hhb+soR432ilG+DvlI7lNC82JF04AvRPhkQnT8XJGcPRLN0cWO59OzcmZexty66VY2NoYsmlCGji/71LrzqPCpiEF9VCZv+Ahlh/Crn9lmUWnSdanpjc1JLNKpHa3XqnxHQwekl0ho/jHzDuKZ0qDD0vZy0pMp47hqQ8jE/oUBGa2Ku5CZPNqwfxwKPc41YRdU+frrbJHcRUk6ZhPUmSlD13fgJAXO8bTRyRsaKXO/1eLXQsF2MBor6M2XzHJ6BNZNQVICYfwLN1rd4PtIcrLh2DsMPg2KAUW7df05MUUwQUjhMQzfpVwNZfPgLEuzzTAtHGvA0Kxfq827iC+lnK+cexEf0K9U8Ya3RFwAWFi0xe5bZ6xcoGsCyX/oz+EEBzvhLAIXd76eNnmtSexN+fkMFHOV+cQ07+E="
+
+	Expiration: "2020-01-21T11:53:10.000Z"
+
+	user_name: "Vinod Gupta"
+
+	```
 	![Notes App - Add page](images/NotesApp-add.png)
 	![Notes App - Listing page](images/NotesApp-listing.png)
 	
