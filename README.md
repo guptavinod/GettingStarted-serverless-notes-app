@@ -48,6 +48,9 @@ There are 7 Components:
 	
 6. Go the VS Studio for project "serverless-notes-backend" and run following commands:
 	```
+	> npm install -g serverless
+	> npm install --save-dev serverless-offline
+	> serverless -v
 	> serverless create -t aws-nodejs -p serverless-notes-backend
 	> npm init -y
 	> npm install --save aws-sdk moment underscore uuid
@@ -101,7 +104,9 @@ There are 7 Components:
 
 8. We need to set Invoke URL path to variable **API_ROOT** within webpack.config.prod.js file of project serverless-notes-webapp. Now run following command in VS Code terminal:
 	```
+	> npm install express
 	> npm run build:prod
+	> npm start (To test application locally)
 	```
 	- This will build website code under folder **public**. Deploy this folder into S3 bucket i.e vg.notesapp (created in step 3)
 	
