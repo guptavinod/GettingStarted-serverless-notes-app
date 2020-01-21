@@ -122,8 +122,8 @@ There are 7 Components:
 10. User Authentication Workflow:
 
 From Notes Frontend app --> within **login.component.html** --> onSignin() --> login.component.ts --> this.authService.login() --> this.setCredentials(id_token); --> This makes a call to Notes Backend app **auth Function** 
-e.g. API_ROOT + STAGE + '/auth'
-
+e.g. API_ROOT + STAGE + '/auth' 
+.
 	![Amazon-Cognito-(Federated Identities)-Authentication Flow](images/awscognito-authentication-flow.png)
 
 ## Sample AWS Credentials Response from notes backend app (auth lambda function) 
@@ -147,10 +147,9 @@ e.g. API_ROOT + STAGE + '/auth'
 	Expiration: "2020-01-21T11:53:10.000Z"
 
 	user_name: "Vinod Gupta"
-
-	```
-	![Notes App - Add page](images/NotesApp-add.png)
-	![Notes App - Listing page](images/NotesApp-listing.png)
+```
+![Notes App - Add page](images/NotesApp-add.png)
+![Notes App - Listing page](images/NotesApp-listing.png)
 	
 10. **Clean UP Resources** - Go the VS Studio for project "serverless-notes-backend" and run following commands:
 	```	
