@@ -165,3 +165,29 @@ e.g. API_ROOT + STAGE + '/auth'
 	Serverless: Stack removal finished...
 	```
 
+11. **STEPS TO RUN THIS Notes backedn APP in OFF-LINE MODE
+- Within folder "sls-yml-files", there are 3 files:
+	- serverless-offline-db.yml
+	- serverless-offline-main.yml
+	- serverless-online-main.yml
+- First create dynamodb table using file "serverless-offline-db.yml"
+Remove serverless.yml file (if already exists) and then copy this file to root and rename it to serverless.yml file and run following command:
+
+```
+> serverless deploy
+```
+This will create table in aws dynamo db
+
+- Now copy following file "serverless-offline-main.yml" on root and rename it to serverless.yml. Then Run following command:
+```
+> serverless offline
+``` 
+**NOTE.** Now you will get API(s) to test within POSTMAN locally on localhost:3000
+
+- After local testing done, you can delete this file and copy 3rd file "serverless-online-main.yml" and rename it to serverless.yml
+and run following command:
+```
+> serverless deploy
+```
+**NOTE** This will create all the resources in AWS environment for accessing notes app over the cloud.. 
+
