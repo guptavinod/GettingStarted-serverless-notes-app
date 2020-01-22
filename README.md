@@ -165,7 +165,7 @@ e.g. API_ROOT + STAGE + '/auth'
 	Serverless: Stack removal finished...
 	```
 
-11. **STEPS TO RUN THIS Notes backedn APP in OFF-LINE MODE
+11. **STEPS TO RUN THIS Notes backend APP in OFF-LINE MODE
 - Within folder "sls-yml-files", there are 3 files:
 	- serverless-offline-db.yml
 	- serverless-offline-main.yml
@@ -184,7 +184,9 @@ This will create table in aws dynamo db
 ``` 
 **NOTE.** Now you will get API(s) to test within POSTMAN locally on localhost:3000
 
-- After local testing done, you can delete this file and copy 3rd file "serverless-online-main.yml" and rename it to serverless.yml
+- After local testing done, you can delete this file and delete table from AWS console. 
+
+- Now to go back for online mode --> Copy 3rd file "serverless-online-main.yml" and rename it to serverless.yml
 and run following command:
 ```
 > serverless deploy
